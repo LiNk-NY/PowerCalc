@@ -1,12 +1,3 @@
-#
-# This is the user-interface definition of a Shiny web application. You can
-# run the application by clicking 'Run App' above.
-#
-# Find out more about building applications with Shiny here:
-# 
-#    http://shiny.rstudio.com/
-#
-
 library(shiny)
 
 # Define UI for application that draws a histogram
@@ -20,6 +11,7 @@ shinyUI(fluidPage(
     sidebarPanel(
       tags$head( tags$script(src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_HTML-full", type = 'text/javascript'),
                  tags$script( "MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});", type='text/x-mathjax-config')),
+      withMathJax(),
       "Interactive calculator for illustrating power of a statistical hypothesis test", 
       sliderInput("alpha", 
                   HTML("<br> </br>", "alpha $\\alpha$ :"), 
