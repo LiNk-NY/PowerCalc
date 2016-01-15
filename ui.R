@@ -26,7 +26,7 @@ shinyUI(fluidPage(
                   step = 0.001),
       sliderInput("size", 
                   HTML("Sample size in each group :"),
-                  min = 30, 
+                  min = 12, 
                   max = 200, 
                   value = 50),
       sliderInput("stdev",
