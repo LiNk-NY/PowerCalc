@@ -23,7 +23,17 @@ shinyUI(fluidPage(
                   min = 0.1, 
                   max = 2, 
                   value = 0.5, 
-                  step = 0.001)
+                  step = 0.001),
+      sliderInput("size", 
+                  HTML("Sample size in each group :"),
+                  min = 30, 
+                  max = 200, 
+                  value = 50),
+      sliderInput("stdev",
+                  HTML("Standard deviation :"), 
+                  min = 0.2, 
+                  max = 3, 
+                  value = 1)
     ),
     
     # Show a plot of the generated distribution
