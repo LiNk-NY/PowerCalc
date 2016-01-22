@@ -73,7 +73,7 @@ shinyServer(function(input, output) {
           line =2, cex = 2.0)
     pow <- 1 - pt(tu, df = nu, ncp = ncp)
     text(paste("power =", round(pow, 3)), x = 5.5, 
-         y = max(y2), adj=1, cex=1.5, col="black")
+         y = 0.4, adj=1, cex=1.5, col="black")
     
     
   })

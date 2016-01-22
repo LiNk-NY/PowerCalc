@@ -1,0 +1,17 @@
+# Remove tracking of files
+*.Rhistory
+*.RData
+
+# Vim files
+*~
+*.swp
+
+# JavaScript files
+*.js
+
+# RStudio files
+.Rproj.user
+*.Rproj
+
+# Output files
+*.html
