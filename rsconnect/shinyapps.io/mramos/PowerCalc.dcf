@@ -1,8 +1,10 @@
 name: PowerCalc
 account: mramos
 server: shinyapps.io
-bundleId: 349995
+appId: 77866
+bundleId: 357293
 url: https://mramos.shinyapps.io/PowerCalc/
-when: 1452831345.20264
+when: 1453666377.26758
 asMultiple: FALSE
 asStatic: FALSE
+ignoredFiles: README.md

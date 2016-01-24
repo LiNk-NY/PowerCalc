@@ -66,16 +66,13 @@ shinyServer(function(input, output) {
     mtext(expression(H[0]), at = m1, adj = 0.5, line=0, cex = 1.5)
     mtext(expression(H[A]), at = ncp, adj = 0.5, line=0, cex = 1.5)
     mtext(bquote(delta[0] == 0), side = 1, at = 0, 
-          line=2, cex=2.0)
-    mtext(bquote(delta[a] == .(m2)), side = 1, at = 3.5, 
-          line=2, cex=2.0)
+          line=3.2, cex=2.0)
+    mtext(bquote(delta[a] == .(m2)), side = 1, at = ncp, 
+          line=1.5, cex=2.0)
     mtext(bquote(alpha == .(alpha)), side = 1, at = -2.5, 
-          line =2, cex = 2.0)
+          line =3.2, cex = 2.0)
     pow <- 1 - pt(tu, df = nu, ncp = ncp)
     text(paste("power =", round(pow, 3)), x = 5.5, 
          y = 0.4, adj=1, cex=1.5, col="black")
-    
-    
   })
-  
 })
