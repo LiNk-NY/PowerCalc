@@ -45,7 +45,8 @@ shinyServer(function(input, output) {
     polygon(x=xx2, y=yy2, density=-1, border=NA, 
             col="grey")
     lines(x1, y1, col = "black", lwd = 3)
-    abline(v = m1, lty = 2)
+    # abline(v = m1, lty = 2)
+    segments(x0 = m1, y0 = 0, x1 = m1, y1 = max(y1), lty = 2)
     # statistical power
     xx3 <- seq(from = tu, to = xmax, length = 200) # from tu and up
     yy3 <- dt(xx3, df = nu, ncp = ncp)
@@ -57,7 +58,8 @@ shinyServer(function(input, output) {
     polygon(x=xx3, y=yy3, density=5, border=NA, 
             col="grey55")
     lines(x2, y2, col = "black", lwd = 3)
-    abline(v = ncp, lty = 2)
+    # abline(v = ncp, lty = 2)
+    segments(x0 = ncp, y0 = 0, x1 = ncp, y1 = max(y2), lty = 2)
     # labels on the x-axis
     abline(h = 0)
     abline(v = qt(c(lowerend, upperend), df = nu))
