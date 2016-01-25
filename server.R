@@ -21,7 +21,7 @@ shinyServer(function(input, output) {
     tu <- qt(upperend, df = nu)
     tl <- qt(lowerend, df = nu)
     
-    plot(c(-3, xmax), c(0, max(y1)), xlab="", ylab="", 
+    plot(c(-3, xmax), c(0, max(y1)+0.015), xlab="", ylab="", 
          axes=F, type="n")
     # upper tail of shaded tail probabilities in H0
     xx1 <- seq(qt(upperend, df=nu), max(x1), length=100)
@@ -45,8 +45,7 @@ shinyServer(function(input, output) {
     polygon(x=xx2, y=yy2, density=-1, border=NA, 
             col="grey")
     lines(x1, y1, col = "black", lwd = 3)
-    # abline(v = m1, lty = 2)
-    segments(x0 = m1, y0 = 0, x1 = m1, y1 = max(y1), lty = 2)
+    abline(v = m1, lty = 2)
     # statistical power
     xx3 <- seq(from = tu, to = xmax, length = 200) # from tu and up
     yy3 <- dt(xx3, df = nu, ncp = ncp)
@@ -58,8 +57,7 @@ shinyServer(function(input, output) {
     polygon(x=xx3, y=yy3, density=5, border=NA, 
             col="grey55")
     lines(x2, y2, col = "black", lwd = 3)
-    # abline(v = ncp, lty = 2)
-    segments(x0 = ncp, y0 = 0, x1 = ncp, y1 = max(y2), lty = 2)
+    abline(v = ncp, lty = 2)
     # labels on the x-axis
     abline(h = 0)
     abline(v = qt(c(lowerend, upperend), df = nu))
@@ -74,7 +72,7 @@ shinyServer(function(input, output) {
     mtext(bquote(alpha == .(alpha)), side = 1, at = -2.5, 
           line =3.2, cex = 2.0)
     pow <- 1 - pt(tu, df = nu, ncp = ncp)
-    text(paste("power =", round(pow, 3)), x = 5.5, 
-         y = 0.4, adj=1, cex=1.5, col="black")
+    text(paste("power =", round(pow, 3)), x = ncp, 
+         y = max(y2)*1.05, adj = 0.55, cex = 1.25, font = 2, col="black")
   })
 })
